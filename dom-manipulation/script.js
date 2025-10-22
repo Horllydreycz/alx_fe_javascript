@@ -18,7 +18,8 @@ const quotes = [
 
 function showRandomQuote() {
   if (quotes.length === 0) {
-    console.log("No quotes available. Please add one.");
+    quotesDisplay.innerHTML = "No quotes available. Please add one.";
+
     return;
   }
   const randomIndex = Math.floor(Math.random() * quotes.length);
