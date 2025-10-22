@@ -1,17 +1,16 @@
 const quotes = [
   {
-    quote1:
-      "The secret of business is to know something that nobody else knows.",
+    text: "The secret of business is to know something that nobody else knows.",
     category: "Business",
     author: "Aristotle Onassis",
   },
   {
-    quote2: "The sole meaning of life is to serve humanity.",
+    text: "The sole meaning of life is to serve humanity.",
     category: "Humanity",
     author: "Leo Tolstoy",
   },
   {
-    quote3: "The important thing is to never stop questioning.",
+    text: "The important thing is to never stop questioning.",
     category: "Science",
     author: "Albert Einstein",
   },
