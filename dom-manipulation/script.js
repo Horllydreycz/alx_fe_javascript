@@ -28,6 +28,21 @@ function showRandomQuote() {
 }
 showRandomQuote();
 function createAddQuoteForm() {
-  document.createElement("form");
+  const form = document.createElement("form");
+
+  //quoteInput
+  const quoteInput = document.createElement("input");
+  quoteInput.type = "text";
+  quoteInput.placeholder = "Enter a quote";
+  quoteInput.required = true;
+
+  //categoryInput
+  const categoryInput = document.createElement("input");
+  categoryInput.type = "text";
+  categoryInput.placeholder = "Enter a category";
+  categoryInput.required = true;
+
+  form.appendChild(quoteInput);
+  form.appendChild(categoryInput);
 }
 createAddQuoteForm();
