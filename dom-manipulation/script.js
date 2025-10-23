@@ -1,3 +1,9 @@
+const quoteBtn = document.getElementById("newQuote");
+const quotesDisplay = document.getElementById("quoteDisplay");
+const newText = document.getElementById("newQuoteText");
+const newQuoteCategory = document.getElementById("newQuoteCategory");
+const newQuoteAuthor = document.getElementById("newQuoteAuthor");
+
 const quotes = [
   {
     text: "The secret of business is to know something that nobody else knows.",
@@ -18,31 +24,88 @@ const quotes = [
 
 function showRandomQuote() {
   if (quotes.length === 0) {
-    quotesDisplay.innerHTML = "No quotes available. Please add one.";
-
+    quotesDisplay.textContent = "No quotes available. Please add one.";
     return;
   }
+
   const randomIndex = Math.floor(Math.random() * quotes.length);
   const randomQuote = quotes[randomIndex];
-  console.log(randomQuote);
+
+  // Format the quote as HTML
+  quotesDisplay.innerHTML = `
+    <blockquote>
+      <p>"${randomQuote.text}"</p>
+      <footer>— ${randomQuote.author} <em>(${randomQuote.category})</em></footer>
+    </blockquote>
+  `;
 }
-showRandomQuote();
+
 function createAddQuoteForm() {
   const form = document.createElement("form");
 
-  //quoteInput
+  // Quote input
   const quoteInput = document.createElement("input");
   quoteInput.type = "text";
   quoteInput.placeholder = "Enter a quote";
   quoteInput.required = true;
 
-  //categoryInput
+  // Author input
+  const authorInput = document.createElement("input");
+  authorInput.type = "text";
+  authorInput.placeholder = "Enter author name";
+  authorInput.required = true;
+
+  // Category input
   const categoryInput = document.createElement("input");
   categoryInput.type = "text";
   categoryInput.placeholder = "Enter a category";
   categoryInput.required = true;
 
+  // Submit button
+  const submitBtn = document.createElement("button");
+  submitBtn.type = "submit";
+  submitBtn.textContent = "Add Quote";
+
   form.appendChild(quoteInput);
+  form.appendChild(authorInput);
   form.appendChild(categoryInput);
+  form.appendChild(submitBtn);
+
+  // Handle form submission
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    quotes.push({
+      text: quoteInput.value.trim(),
+      author: authorInput.value.trim(),
+      category: categoryInput.value.trim(),
+    });
+    form.reset();
+    alert("Quote added successfully!");
+  });
+
+  return form;
 }
-createAddQuoteForm();
+
+// Event listener - just call showRandomQuote directly
+if (quoteBtn) {
+  quoteBtn.addEventListener("click", showRandomQuote);
+}
+
+function addQuote() {
+  /*const newText = prompt("Enter the quote text:");
+  const newAuthor = prompt("Enter the author name:");
+  const newCategory = prompt("Enter the category:");
+  */
+  const newTextValue = newText.value.trim();
+  const newCategoryValue = newQuoteCategory.value.trim();
+  const newQuoteAuthorValue = newQuoteAuthor.value.trim();
+  if (newTextValue && newQuoteAuthorValue && newCategoryValue) {
+    quotes.push({
+      text: newTextValue,
+      author: newQuoteAuthorValue,
+      category: newCategoryValue,
+    });
+    alert("Quote added successfully!");
+    showRandomQuote(); // Display the new quote
+  }
+}
