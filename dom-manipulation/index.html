@@ -4,27 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dynamic Quote Generator</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <h1>Dynamic Quote Generator</h1>
-    <div id="quoteDisplay"></div>
-    <button id="newQuote">Show New Quote</button>
-    <div>
-      <input id="newQuoteText" type="text" placeholder="Enter a new quote" />
-      <input
-        id="newQuoteCategory"
-        type="text"
-        placeholder="Enter quote category"
-      />
-      <input id="newQuoteAuthor" type="text" placeholder="Author's name" />
-      <button onclick="addQuote()">Add Quote</button>
-      <input
-        type="file"
-        id="importFile"
-        accept=".json"
-        onchange="importFromJsonFile(event)"
-      />
-      <button id="exportBtn">Export Quotes</button>
+  </div>
+  <div id="quoteDisplay"></div>
+  
+  <div>
+    <input id="newQuoteText" type="text" placeholder="Enter a new quote" />
+    <input
+    id="newQuoteCategory"
+    type="text"
+    placeholder="Enter quote category"
+    />
+    <input id="newQuoteAuthor" type="text" placeholder="Author's name" />
+    <input
+    type="file"
+    id="importFile"
+    accept=".json"
+    onchange="importFromJsonFile(event)"
+    <div class="btn-group">
+      <div class="button-group">
+        <button id="newQuote">Show New Quote</button>
+        <button onclick="addQuote()">Add Quote</button>
+        <button id="exportBtn">Export Quotes</button>
+        <button id="importBtn">Import Quotes</button>
+        <input type="file" id="importFile" accept=".json" />
+      </div>
+  
     </div>
     <script src="script.js"></script>
   </body>
