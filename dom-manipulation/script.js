@@ -1,22 +1,20 @@
-let quotes = [
+let quotes = (quotes = [
   {
-    text: "The greatest glory in living lies not in never falling, but in rising every time we fall.",
-    category: "Inspiration",
+    text: "The secret of business is to know something that nobody else knows.",
+    category: "Business",
+    author: "Aristotle Onassis",
   },
   {
-    text: "The future belongs to those who believe in the beauty of their dreams.",
-    category: "Inspiration",
+    text: "The sole meaning of life is to serve humanity.",
+    category: "Humanity",
+    author: "Leo Tolstoy",
   },
   {
-    text: "Life is what happens when you're busy making other plans.",
-    category: "Life",
+    text: "The important thing is to never stop questioning.",
+    category: "Science",
+    author: "Albert Einstein",
   },
-  {
-    text: "The only way to do great work is to love what you do.",
-    category: "Work",
-  },
-  { text: "What we think, we become.", category: "Mindfulness" },
-];
+]);
 
 const MOCK_API_URL = "https://jsonplaceholder.typicode.com/posts";
 const SYNC_INTERVAL = 30000;
