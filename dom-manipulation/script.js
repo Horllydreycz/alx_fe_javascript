@@ -1,20 +1,22 @@
-let quotes = (quotes = [
+let quotes = [
   {
     text: "The secret of business is to know something that nobody else knows.",
     category: "Business",
-    author: "Aristotle Onassis",
   },
   {
     text: "The sole meaning of life is to serve humanity.",
     category: "Humanity",
-    author: "Leo Tolstoy",
   },
   {
     text: "The important thing is to never stop questioning.",
     category: "Science",
-    author: "Albert Einstein",
   },
-]);
+  {
+    text: "The only way to do great work is to love what you do.",
+    category: "Work",
+  },
+  { text: "What we think, we become.", category: "Mindfulness" },
+];
 
 const MOCK_API_URL = "https://jsonplaceholder.typicode.com/posts";
 const SYNC_INTERVAL = 30000;
